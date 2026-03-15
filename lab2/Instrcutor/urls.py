@@ -1,5 +1,7 @@
-from django.contrib import admin
-from django.urls import path,include
+from django.urls import path
+from . import views
 
 urlpatterns = [
+    path('', views.list_instructors, name='list_instructors'),
+    path('details/<int:pk>/', views.instructor_details, name='instructor_details'),
 ]
