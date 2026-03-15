@@ -9,7 +9,6 @@ class Student(BaseModel):
     bio = models.TextField(blank=True)
     phone = models.CharField(max_length=30, blank=True)
     major = models.CharField(max_length=200, blank=True)
-    image = models.ImageField(upload_to='students/', blank=True, null=True)
     enrolled_date = models.DateField(auto_now_add=True)
     gpa = models.DecimalField(max_digits=3, decimal_places=2, blank=True, null=True)
 

@@ -9,7 +9,6 @@ class Instructor(BaseModel):
     bio = models.TextField(blank=True)
     phone = models.CharField(max_length=30, blank=True)
     department = models.CharField(max_length=200, blank=True)
-    image = models.ImageField(upload_to='instructors/', blank=True, null=True)
     joined_date = models.DateField(auto_now_add=True)
 
     def __str__(self):
