@@ -12,6 +12,19 @@ class Course(BaseModel):
     start_date = models.DateField(blank=True, null=True)
     end_date = models.DateField(blank=True, null=True)
 
+    instructor = models.ForeignKey(
+        'Instrcutor.Instructor',
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name='courses'
+    )
+    students = models.ManyToManyField(
+        'Students.Student',
+        blank=True,
+        related_name='courses'
+    )
+
     def __str__(self):
         return f"{self.code} - {self.title}"
     
